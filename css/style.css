@@ -305,3 +305,62 @@ footer {
         display: none; /* Hides the vertical line when columns stack vertically */
     }
 }
+
+/* ==========================================================================
+   7. DROPDOWN MENU
+   ========================================================================== */
+.dropdown {
+    position: relative;
+}
+
+/* Inherit the existing card background and styling to perfectly match */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--bg-card); 
+    min-width: 180px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    z-index: 200;
+    top: 100%; 
+    left: 2rem; /* Aligns with the margin of the parent li */
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+/* Reset margins from the main nav and style the dropdown links */
+nav ul li .dropdown-content a {
+    color: var(--text-muted);
+    padding: 12px 20px;
+    margin-left: 0;
+    display: block;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav ul li .dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect matching your existing subtle transitions */
+nav ul li .dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+}
+
+/* Create an invisible bridge so the hover state doesn't drop when moving the mouse down */
+.dropdown::after {
+    content: '';
+    position: absolute;
+    height: 1rem;
+    width: 100%;
+    bottom: -1rem;
+    left: 0;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
