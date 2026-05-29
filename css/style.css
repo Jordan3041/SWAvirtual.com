@@ -324,7 +324,7 @@ footer {
     border: 1px solid rgba(255, 255, 255, 0.03);
     z-index: 200;
     top: 100%; 
-    left: 2rem; /* Aligns with the margin of the parent li */
+    left: 0; /* Aligns with the margin of the parent li */
     margin-top: 0.5rem;
     overflow: hidden;
 }
