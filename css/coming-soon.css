@@ -1,0 +1,176 @@
+/* ==========================================
+   Southwest Virtual Airlines - Coming Soon
+   ========================================== */
+
+/* Reset & Base Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --bg-center: #1e293b;
+    --bg-outer: #0f172a;
+    --card-bg: #111827;
+    --sw-blue: #0033a0;
+    --sw-red: #f43f5e;
+    --sw-yellow: #f59e0b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, var(--bg-center) 0%, var(--bg-outer) 100%);
+    color: var(--text-main);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Aura Light Emission */
+body::before {
+    content: '';
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: var(--sw-blue);
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.25;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Coming Soon Central Box */
+.coming-soon-container {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 520px;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+/* Card Header & Accent Ribbon */
+.card-header {
+    background-color: #1f2937;
+    padding: 30px 20px 25px;
+    position: relative;
+}
+
+.brand-logo {
+    height: 45px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.accent-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--sw-blue) 0%, var(--sw-red) 50%, var(--sw-yellow) 100%);
+}
+
+/* Card Body Content */
+.card-body {
+    padding: 40px 35px 30px;
+}
+
+h1 {
+    font-size: 1.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.025em;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+/* Progress Bar Components */
+.progress-wrapper {
+    margin-bottom: 35px;
+    text-align: left;
+}
+
+.progress-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.progress-text span:last-child {
+    color: var(--sw-yellow);
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: #1f2937;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    width: 25%; /* Match percentage in HTML above */
+    height: 100%;
+    background-color: var(--sw-blue);
+    border-radius: 50px;
+    box-shadow: 0 0 12px rgba(0, 51, 160, 0.5);
+}
+
+.notice {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Footer & Back Link Navigation */
+.card-footer {
+    background-color: rgba(31, 41, 55, 0.4);
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.back-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.back-link:hover {
+    color: var(--text-main);
+    transform: translateX(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .card-body {
+        padding: 30px 20px 25px;
+    }
+    h1 {
+        font-size: 1.6rem;
+    }
+}

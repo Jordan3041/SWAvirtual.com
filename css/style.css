@@ -1,0 +1,307 @@
+/* ==========================================================================
+   1. COLOR PALETTE & GLOBAL RESETS
+   ========================================================================== */
+:root {
+    --bg-dark: #0b111e;       /* Deep Dark Navy Base */
+    --bg-card: #151f32;       /* Lighter Navy for glass/card elements */
+    --text-main: #f8fafc;     /* Clean Off-white */
+    --text-muted: #94a3b8;    /* Muted Slate Gray */
+    
+    /* Southwest Accents */
+    --swa-blue: #304ffe;      /* Vibrant SWA Bold Blue */
+    --swa-red: #f44336;       /* SWA Warm Red */
+    --swa-yellow: #ffca28;    /* SWA Sunrise Yellow */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Utility Accent Classes --- */
+.swa-blue { color: var(--swa-blue); }
+.swa-red { color: var(--swa-red); }
+.swa-yellow { color: var(--swa-yellow); }
+
+
+/* ==========================================================================
+   2. NAVIGATION BAR & LOGO
+   ========================================================================== */
+header {
+    background-color: var(--bg-card);
+    border-bottom: 2px solid var(--swa-blue);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 2rem;
+}
+
+.nav-logo {
+    height: 45px; 
+    width: auto;
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover, 
+nav ul li a.active {
+    color: var(--text-main);
+}
+
+.btn-login {
+    background: transparent;
+    border: 2px solid var(--swa-yellow);
+    color: var(--swa-yellow) !important;
+    padding: 0.6rem 1.5rem;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-login:hover {
+    background: var(--swa-yellow);
+    color: var(--bg-dark) !important;
+    box-shadow: 0 0 15px rgba(255, 202, 40, 0.4);
+}
+
+
+/* ==========================================================================
+   3. HERO SECTION & ROUNDED BUTTONS
+   ========================================================================== */
+.hero {
+    background: linear-gradient(rgba(11, 17, 30, 0.85), rgba(11, 17, 30, 0.95)), 
+                url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1920') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+.hero-buttons a {
+    text-decoration: none;
+    padding: 0.85rem 2.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    margin: 0 0.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-buttons a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary {
+    background-color: var(--swa-blue);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #4060ff;
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--text-main);
+    color: var(--text-main);
+}
+
+.btn-secondary:hover {
+    background-color: var(--text-main);
+    color: var(--bg-dark);
+}
+
+
+/* ==========================================================================
+   4. OPERATIONS & STATS DASHBOARD
+   ========================================================================== */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: -3rem auto 3rem auto;
+    padding: 0 2rem;
+}
+
+.stat-card {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.stat-card h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.pulse {
+    color: #4ade80;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+
+/* ==========================================================================
+   5. WELCOME CONTENT
+   ========================================================================== */
+.welcome-section {
+    max-width: 800px;
+    margin: 0 auto 5rem auto;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.welcome-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.welcome-section p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+
+/* ==========================================================================
+   6. FOOTER & PARTNERSHIP LOGOS
+   ========================================================================== */
+footer {
+    background-color: #0d1522; /* Styled slightly lighter than body background for a crisp separation */
+    padding: 4rem 2rem 2rem 2rem;
+    border-top: 1px solid #1e293b;
+}
+
+.partnerships {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+}
+
+.partner-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.partner-logo {
+    height: 65px; /* Restricts heights to stay proportional to each other */
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 1.2rem;
+}
+
+.partner-col p {
+    font-size: 0.95rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+/* Inner Divider Line matching the layout image */
+.partner-divider {
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.15), transparent);
+}
+
+.partner-link {
+    color: var(--text-main);
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.partner-link:hover {
+    color: var(--swa-yellow);
+}
+
+/* Bottom Copyright Section */
+.copyright {
+    text-align: center;
+    color: #475569; /* Sleek, dark muted slate gray */
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive breakpoint for mobile screen layouts */
+@media (max-width: 768px) {
+    .partnerships {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .partner-divider {
+        display: none; /* Hides the vertical line when columns stack vertically */
+    }
+}
